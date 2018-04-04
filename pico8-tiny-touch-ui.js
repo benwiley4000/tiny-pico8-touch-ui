@@ -19,14 +19,19 @@
     __btns[playerIndex] = __btns[playerIndex] || {};
 
     // listen for touchstart and touchend to toggle buttons
-    domElement.addEventListener('touchstart', function() {
+    function press(e) {
+      e.preventDefault();
       __btns[playerIndex][btnIndex] = true;
       update_btns(playerIndex);
-    });
-    domElement.addEventListener('touchend', function() {
+    }
+    function release() {
       __btns[playerIndex][btnIndex] = false;
       update_btns(playerIndex);
-    });
+    }
+    domElement.addEventListener('touchstart', press);
+    domElement.addEventListener('mousedown', press);
+    domElement.addEventListener('touchend', release);
+    domElement.addEventListener('mouseup', release);
   }
 
   window.registerP8Btn = registerP8Btn;
