@@ -2,6 +2,8 @@
 
 A tiny library which makes it easy to add touch controls to your [PICO-8](https://www.lexaloffle.com/pico-8.php) web game.
 
+### [Try it here!](https://benwiley4000.github.io/tiny-pico8-touch-ui/)
+
 PICO-8's default web export doesn't yet support touch controls, but I want my game to support mobile, which means supporting touch. If you're like me, you might find the built-in API for controlling touch button inputs from a web page a bit esoteric, and not super easy to read/write. Why not write a tiny API wrapper that makes this much easier?
 
 If you have a page that looks like this:
@@ -14,7 +16,7 @@ If you have a page that looks like this:
 <button id="down"> \/ </button>
 <button id="o"> O </button>
 <button id="x"> X </button>
-<! -- ... script stuff -->
+<!-- ... script stuff -->
 ```
 
 Include [this](pico8-tiny-touch-ui.js) in your page...
