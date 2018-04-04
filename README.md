@@ -44,3 +44,14 @@ registerP8Btn(document.getElementById('x-P2'), 5, 1 /* player 2 */);
 ```
 
 That's it!
+
+## building example site
+
+To build a new copy of the example javascript export, open PICO-8 and run:
+
+```console
+load example.p8
+export index.js
+```
+
+Then open index.html in a web browser.
