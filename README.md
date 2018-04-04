@@ -47,6 +47,22 @@ registerP8Btn(document.getElementById('x-P2'), 5, 1 /* player 2 */);
 
 That's it!
 
+## installing as a module
+
+You can also install from npm:
+
+```console
+npm install --save tiny-pico8-touch-ui
+```
+
+And use like this:
+
+```js
+var registerP8Btn = require('tiny-pico8-touch-ui');
+
+registerP8Btn(document.getElementById('left'), 0);
+```
+
 ## building example site
 
 To build a new copy of the example javascript export, open PICO-8 and run:
