@@ -1,4 +1,7 @@
+var registerP8Btn;
+
 (function() {
+  registerP8Btn = _registerP8Btn;
   var __btns = {};
 
   // re-compute pico8_buttons[playerIndex] bitfield using new states
@@ -11,7 +14,7 @@
 
   // domElement, btnIndex are required
   // playerIndex is optional and defaults to 0 (single player)
-  function registerP8Btn(domElement, btnIndex, playerIndex) {
+  function _registerP8Btn(domElement, btnIndex, playerIndex) {
     // initialize objects if needed
     playerIndex = playerIndex || 0;
     window.pico8_buttons = window.pico8_buttons || [];
@@ -33,6 +36,8 @@
     domElement.addEventListener('touchend', release);
     domElement.addEventListener('mouseup', release);
   }
-
-  window.registerP8Btn = registerP8Btn;
 })();
+
+if (typeof module !== 'undefined' && module) {
+  module.exports = registerP8Btn;
+}

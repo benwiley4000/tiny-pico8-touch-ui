@@ -1,0 +1,26 @@
+{
+  "name": "tiny-pico8-touch-ui",
+  "version": "0.1.0",
+  "description": "A tiny library which makes it easy to add touch controls to your PICO-8 web game",
+  "main": "tiny-pico8-touch-ui.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benwiley4000/tiny-pico8-touch-ui.git"
+  },
+  "keywords": [
+    "pico-8",
+    "web",
+    "game-development",
+    "mobile",
+    "touch"
+  ],
+  "author": "Ben Wiley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benwiley4000/tiny-pico8-touch-ui/issues"
+  },
+  "homepage": "https://github.com/benwiley4000/tiny-pico8-touch-ui#readme"
+}
