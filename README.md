@@ -19,10 +19,10 @@ If you have a page that looks like this:
 <!-- ... script stuff -->
 ```
 
-Include [this](pico8-tiny-touch-ui.js) in your page...
+Include [this](tiny-pico8-touch-ui.js) in your page...
 
 ```html
-<script src="pico8-tiny-touch-ui.js"></script>
+<script src="tiny-pico8-touch-ui.js"></script>
 ```
 
 Then later you can register buttons like this:
