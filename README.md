@@ -47,6 +47,8 @@ registerP8Btn(document.getElementById('x-P2'), 5, 1 /* player 2 */);
 
 That's it!
 
+> [FAQ](#faq)
+
 ## installing as a module
 
 You can also install from npm:
@@ -73,3 +75,77 @@ export index.js
 ```
 
 Then open index.html in a web browser.
+
+## FAQ
+
+### that worked, but there's no sound!
+
+That will happen on many phones (not because of this library, but because PICO-8 starts running before the user has interacted with the screen).
+
+To get around that, you can defer running your game until after the user has clicked on the screen. Here's a way to do that (this is undocumented and might change in a future PICO-8 release):
+
+```html
+<button id="myGameStartButton">Start!</button>
+<script>
+  var Module = {};
+  // ...
+  // This part is important!!
+  Module.noInitialRun = true;
+</script>
+<script src="mygame.js"></script>
+<script>
+  var game_started = false;
+  function startGame() {
+    if (game_started) return;
+    game_started = true;
+    Module.calledRun = false;
+    window.shouldRunNow = true;
+    run();
+  }
+  document.querySelector('#myGameStartButton')
+    .addEventListener('click', startGame);
+</script>
+```
+
+### ok that works, but I don't actually want to display touch controls if the page is loaded on a computer
+
+Check for a `touchstart` event and set a variable so when the subsequent `click` event follows, you know to show touch controls.
+
+```html
+<style>
+  .touch_controls {
+    display: none;
+  }
+  .using_touch .touch_controls {
+    display: initial;
+  }
+</style>
+<div class="touch_controls">
+  <button id="left"> < </button>
+  <!-- ... -->
+</div>
+<!-- ... -->
+<script>
+  var game_started = false;
+  var using_touch = false;
+  function startGame() {
+    if (game_started) return;
+    game_started = true;
+    if (using_touch) {
+      document.body.classList.add('using_touch');
+    }
+    Module.calledRun = false;
+    window.shouldRunNow = true;
+    run();
+  }
+  document.querySelector('#myGameStartButton')
+    .addEventListener('click', startGame);
+  
+  // on a touch device, touchstart always
+  // gets processed before click
+  function activateTouch() {
+    using_touch = true;
+  }
+  document.addEventListener('touchstart', activateTouch);
+</script>
+```
