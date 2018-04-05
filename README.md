@@ -94,7 +94,10 @@ To get around that, you can defer running your game until after the user has cli
 </script>
 <script src="mygame.js"></script>
 <script>
+  var game_started = false;
   function startGame() {
+    if (game_started) return;
+    game_started = true;
     Module.calledRun = false;
     window.shouldRunNow = true;
     run();
@@ -123,8 +126,11 @@ Check for a `touchstart` event and set a variable so when the subsequent `click`
 </div>
 <!-- ... -->
 <script>
+  var game_started = false;
   var using_touch = false;
   function startGame() {
+    if (game_started) return;
+    game_started = true;
     if (using_touch) {
       document.body.classList.add('using_touch');
     }
