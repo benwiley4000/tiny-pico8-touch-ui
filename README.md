@@ -47,6 +47,8 @@ registerP8Btn(document.getElementById('x-P2'), 5, 1 /* player 2 */);
 
 That's it!
 
+> [FAQ](#faq)
+
 ## installing as a module
 
 You can also install from npm:
