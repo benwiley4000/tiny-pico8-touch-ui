@@ -49,6 +49,16 @@ That's it!
 
 > [FAQ](#faq)
 
+## fetching script from CDN
+
+If you prefer to fetch tiny-pico8-touch-ui.js from a CDN:
+
+```html
+<script src="https://unpkg.com/tiny-pico8-touch-ui"></script>
+```
+
+(It's better to specify a specific version string rather than letting unpkg serve you the latest version each time the page is fetched; try opening https://unpkg.com/tiny-pico8-touch-ui in a web browser first so it resolves to a more specific URL, then include that as your script `src`.)
+
 ## installing as a module
 
 You can also install from npm:
